@@ -1,0 +1,66 @@
+{% extends 'src/base.html' %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
+}
+</style>
+
+{% endblock %}
+
+{% block body%}
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button"><img class="img-responsive" style="height: 2em; width: auto; margin-top: -0.5em" align="left"  src="{% static 'images/logo.png' %}"/>Microsoft Student Chapter</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'home' %}" class="w3-bar-item w3-button">Home</a>
+      <a href="{% url 'newsfeed' %}" class="w3-bar-item w3-button">Newsfeed</a>
+      <div class="w3-dropdown-hover">
+      <button class="w3-bar-item w3-button">Events</button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="/events/msweek" class="w3-bar-item w3-button">MS Week</a>
+        <a href="/events/inspirus" class="w3-bar-item w3-button">Inspirus</a>
+        <a href="/events/rumble" class="w3-bar-item w3-button">Rumble</a>
+      </div>
+      <a href="{% url 'gallery' %}" class="w3-bar-item w3-button">Gallery</a>
+      <a href="{% url 'team' %}" class="w3-bar-item w3-button">Team</a>
+      <a href="{% url 'contact' %}" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="{{post.image.url}}" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">{{ post.title }}</h1><br>
+      <h5 class="w3-center">{{post.timestamp}}</h5>
+      <p class="w3-large">{{post.content | linebreaks }}</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>&copy; 2018 Microsoft Student Chapter. All Rights Reserved | Design by <a href="{% url 'team' %}"> Team </a></p>
+</footer>
+{% endblock %}
+

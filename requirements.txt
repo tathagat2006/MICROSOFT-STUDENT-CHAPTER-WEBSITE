@@ -12,7 +12,7 @@ protobuf==3.5.0.post1
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycryptodome==3.4.3
-PyJWT==1.5.3
+PyJWT==2.4.0
 Pyrebase==3.0.27
 python-decouple==3.1
 python-firebase==1.2
@@ -29,7 +29,7 @@ social-auth-core==1.5.0
 whitenoise==3.3.1
 pyasn1-modules==0.2.1
 pycryptodome==3.4.3
-PyJWT==1.5.3
+PyJWT==2.4.0
 Pyrebase==3.0.27
 python-decouple==3.1
 python-firebase==1.2
